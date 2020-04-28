@@ -1,0 +1,97 @@
+html::-webkit-scrollbar-track
+{
+	 background-color: #F5F5F5;
+	 border-radius: 8px;
+}
+ 
+html::-webkit-scrollbar
+{
+	 width: 8px;
+	 background-color: #F5F5F5;
+}
+ 
+html::-webkit-scrollbar-thumb
+{
+	 border-radius: 8px;
+	 background-color: #009ba1;
+}
+ 
+html::-webkit-scrollbar-thumb:hover
+{
+	 background-color: #008ba1;
+}
+
+img
+{
+	border-radius: 4px;
+}
+
+body
+{
+    font-family: 
+    "Helvetica Neue",
+    Helvetica,Arial,
+    "Microsoft Yahei",
+    "Hiragino Sans GB",
+    "Heiti SC",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+}
+
+.friend-card-list
+{
+	margin: 0 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friend-card
+{
+	margin-top: 1rem;
+	display: flex;
+	text-decoration-color: transparent;
+	align-items: center;
+	justify-content: flex-start;
+	cursor: pointer;
+	width: 50%;
+}
+
+.friend-card-content
+{
+	margin-left: 1rem;
+}
+
+.cardlist
+{
+	max-width: 100%;
+	padding: 1rem 0 1rem;
+	margin: 1rem 0 1rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.music-card
+{
+	padding: 0 1rem 1rem;
+	width: 50%;
+}
+
+@media (max-width: 650px)
+{
+	.cardlist{
+		display: block;
+	}
+	.music-card{
+		width: 100%;
+	}
+}
+
+@media (max-width: 400px)
+{
+	.friend-card-list{
+		display: block;
+	}
+	.friend-card{
+		width: 100%;
+	}
+}
