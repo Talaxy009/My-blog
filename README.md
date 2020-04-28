@@ -16,7 +16,7 @@ This is my blog, which is made with [Gatsby](https://www.gatsbyjs.org/).
 
 ```bash
 gatsby develop    # dev mode
-gatsby clean    # remove the `/.cache` and `public` folders
+gatsby clean      # remove the .cache and public folders
 gatsby build      # build blog
 ```
 
