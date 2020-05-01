@@ -27,6 +27,6 @@ Using `gatsby clean` before `gatsby build`
 ## LICENSE
 
 ALL code using [MIT](LICENSE) LICENSE,
-with all articles(including `/content/blog` folders) using
-[CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+with all articles(including `/content/blog` folder) using
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 LICENSE.
