@@ -16,7 +16,7 @@ description: "又实现了一个一直想要的功能，现将过程记录于此
 
 ```bash
 npm install gatsby-plugin-use-dark-mode use-dark-mode
-npm install npm install @material-ui/core
+npm install @material-ui/core
 ```
 
 * 在gatsby-config.js中启用`gatsby-plugin-use-dark-mode`
@@ -58,55 +58,32 @@ const DarkModeToggle = () => {
 export default DarkModeToggle;
 ```
 
-在这里我不想使用react-toggle而是使用Material UI的Icons和Button来显示，所以会有较大的修改，主要思路是：
+在这里我不想使用react-toggle而是使用Material UI的Icons和Button来显示，所以会有一些修改，主要思路是：
 
-当我点击了右上角的 ☀ ，它会调用夜间模式的插件来实现日间模式切换到夜间模式，同时把自己（☀）的`display`设置为`none`，而把 ☾ 的`display`设置为`block`。这样一来，当我想切换回日间模式时就需要点击 ☾ 了，然后将会发生的事同上。表面上看，似乎是一个Button干完了这些事，实际上是两个Buttons轮流显现和隐藏，而你每次点击的都不是同一个Button，这样能使页面更加的美观简洁，也让代码变得更简单些。
+当我点击了右上角的 ☀ ，它会调用夜间模式的插件来实现模式地切换，同时把自己的 ☀ 设置为 ☾ 。这样一来，当我想切换回日间模式时点击的就是 ☾ 了，然后会发生的事同上。这样能使页面更加的美观简洁（个人认为），也让代码变得更简单些。
 
 将上述说明实践之后，我得到了这个：
 
 ```js
 import React from 'react'
-import clsx from 'clsx'
 import useDarkMode from 'use-dark-mode'
-import { makeStyles } from '@material-ui/core/styles'
 import Sun from '@material-ui/icons/WbSunnyRounded'
 import Moon from '@material-ui/icons/Brightness2Rounded'
 import IconButton from '@material-ui/core/IconButton'
-
-const useStyles = makeStyles({
-  turnOn:{
-    display:'none',
-  },
-  turnOff:{
-    display:'block',
-  }
-});
-
 const DarkMode = () => {
   const darkMode = useDarkMode(false);
-  const classes = useStyles();
 
   return (
     <div>
       <IconButton
       type="button"
-      onClick={darkMode.enable}
-      className={
-        clsx({[classes.turnOff]:!darkMode.value,
-        [classes.turnOn]: darkMode.value})
-      }
+      onClick={darkMode.value? (darkMode.disable) : (darkMode.enable) }
       >
-        <Sun style={{ color: '#ff9800' }}/>
-      </IconButton>
-      <IconButton
-      type="button"
-      onClick={darkMode.disable}
-      className={
-        clsx({[classes.turnOn]:!darkMode.value,
-        [classes.turnOff]: darkMode.value})
-      }
-      >
-        <Moon style={{ color:'#ffb74d' }}/>
+        {
+          darkMode.value?
+          (<Moon style={{ color:'#ffb74d' }}/>):
+          (<Sun style={{ color: '#ff9800' }}/>)
+        }
       </IconButton>
     </div>
   );
@@ -116,7 +93,7 @@ export default DarkMode;
 
 ```
 
-如上，对于最困难的部分——也就是两个Buttons的显隐，我使用了[clsx](https://www.npmjs.com/package/clsx)来对布尔型的`darkMode.value`进行判断来决定哪个Button的`display`是`none`哪个是`block`。
+如上，一个简单的Button就出炉啦~
 
 ## 修改layout.js
 
