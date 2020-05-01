@@ -52,6 +52,12 @@ body.dark-mode
 	transition: background-color 0.3s ease;
 }
 
+.dark-mode blockquote
+{
+	color: #999;
+	border-left: 0.32813rem solid #999;
+}
+
 .friend-card-list
 {
 	margin: 0 0 1.5rem;
