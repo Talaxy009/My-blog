@@ -47,6 +47,7 @@
   "homepage": "https://snow-mountain.life/",
   "license": "MIT",
   "main": "index.js",
+  "repository": "https://github.com/Talaxy009/My-blog.git",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
