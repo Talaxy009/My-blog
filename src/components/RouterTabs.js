@@ -15,7 +15,7 @@ const StyledTabs = withStyles({
 const StyledTab = withStyles({
   root: {
     textTransform: 'none',
-    color: '#000000',
+    color: 'inherit',
     '&:hover': {
       color: '#009ba1',
     },

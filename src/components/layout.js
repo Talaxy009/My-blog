@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import DarkMode from "./DarkMode"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -58,9 +59,12 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <header style={{display:'flex', justifyContent:'space-between'}}>
+        {header}
+        <DarkMode style={{float:'right'}}/>
+      </header>
       <main>{children}</main>
-      <footer style={{textAlign: `center`,fontSize: `0.8rem`,}} >
+      <footer style={{textAlign: 'center', fontSize: '0.8rem',}} >
         © <a href="http://beian.miit.gov.cn/">粤ICP备20015580号</a>
         <br></br>
         -{new Date().getFullYear()}- <br></br>

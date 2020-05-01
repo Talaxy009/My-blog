@@ -68,6 +68,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-use-dark-mode',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

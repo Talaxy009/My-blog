@@ -1,12 +1,12 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import Image from 'gatsby-image'
 import CardContent from '@material-ui/core/CardContent'
-import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import MuiExpansionPanel from '@material-ui/core/ExpansionPanel'
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
+import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const ExpansionPanel = withStyles({
@@ -38,13 +38,13 @@ const Music = ({ musicImages = [], props = [], data = [] }) =>{
                 )
                 return(
                     <div className="music-card" key={music.name}>
-                        <Card>
+                        <Card style={{backgroundColor:'inherit', color:'inherit'}}>
                             <Image
                                 alt={props.alt}
                                 fluid={image.childImageSharp.fluid}
                                 style={{
                                     flex: 1,
-                                    margin: '0 auto',
+                                    margin: '0.9rem auto',
                                     maxWidth: '90%',
                                     borderRadius: '100%',
                                 }}
@@ -53,19 +53,19 @@ const Music = ({ musicImages = [], props = [], data = [] }) =>{
                                 }}
                             />
                         <CardContent>
-                            <Typography variant="body1" color="textPrimary" component="p">
+                            <Typography variant="body1" component="p">
                                 专辑：{music.name}
                             </Typography>
-                            <Typography variant="body1" color="textPrimary" component="p">
+                            <Typography variant="body1" component="p">
                                 乐队：{music.band}
                             </Typography>
-                            <Typography variant="body1" color="textPrimary" component="p">
+                            <Typography variant="body1" component="p">
                                 发行日期：{music.time}
                             </Typography>
                         </CardContent>
-                        <ExpansionPanel >
+                        <ExpansionPanel style={{backgroundColor:'inherit', color:'inherit'}}>
                             <ExpansionPanelSummary
-                                expandIcon={<ExpandMoreIcon />}
+                                expandIcon={<ExpandMoreIcon style={{color:'#8f8f8f'}}/>}
                                 id={music.image}
                             >
                             </ExpansionPanelSummary>
