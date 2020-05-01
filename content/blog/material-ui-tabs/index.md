@@ -268,7 +268,7 @@ const StyledTabs = withStyles({
 const StyledTab = withStyles({
   root: {
     textTransform: 'none',
-    color: '#000000',//未选中Tab的颜色
+    color: 'inherit',//未选中Tab的颜色
     '&:hover': {
       color: '#009ba1',//鼠标下Tab的颜色
     },
