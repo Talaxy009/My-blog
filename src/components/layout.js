@@ -61,16 +61,16 @@ const Layout = ({ location, title, children }) => {
     >
       <header style={{display:'flex', justifyContent:'space-between'}}>
         {header}
-        <DarkMode style={{float:'right'}}/>
+        <DarkMode/>
       </header>
       <main>{children}</main>
       <footer style={{textAlign: 'center', fontSize: '0.8rem',}} >
-        <a href="http://beian.miit.gov.cn/">粤ICP备20015580号</a>
+        <a target="_blank" rel="noopener noreferrer" href="http://beian.miit.gov.cn/">粤ICP备20015580号</a>
         <br/>
         ©{new Date().getFullYear()}<br/>
-        由<a href="https://www.gatsbyjs.org">Gatsby</a>强力驱动<br/>
+        由<a target="_blank" rel="noopener noreferrer" href="https://www.gatsbyjs.org">Gatsby</a>强力驱动<br/>
         <RSS style={{fontSize:'14px'}} />
-        <a href="https://snow-mountain.life/rss.xml">RSS订阅</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://snow-mountain.life/rss.xml">RSS订阅</a>
       </footer>
     </div>
   )

@@ -38,7 +38,7 @@ const Music = ({ musicImages = [], props = [], data = [] }) =>{
                 )
                 return(
                     <div className="music-card" key={music.name}>
-                        <Card style={{ color:'inherit'}}>
+                        <Card style={{ transition: 'background-color 0.3s ease', color:'inherit'}}>
                             <Image
                                 alt={props.alt}
                                 fluid={image.childImageSharp.fluid}

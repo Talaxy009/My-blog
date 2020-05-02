@@ -35,21 +35,20 @@ body
     "Hiragino Sans GB",
     "Heiti SC",
     "WenQuanYi Micro Hei",
-    sans-serif;
+	sans-serif;
+	transition: background-color 0.3s ease;
 }
 
 body.light-mode
 {
 	background-color: #fff;
 	color: #333;
-	transition: background-color 0.3s ease;
 }
 
 body.dark-mode
 {
 	background-color: #212121;
 	color: #999;
-	transition: background-color 0.3s ease;
 }
 
 .dark-mode blockquote
@@ -98,7 +97,7 @@ body.dark-mode
 
 .dark-mode .MuiCard-root
 {
-	background-color: #2b2b2b;
+	background-color: #1e1e1e;
 }
 
 @media (max-width: 650px)

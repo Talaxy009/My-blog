@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/layout'
 import RouterTabs from '../components/RouterTabs'
 import Music from '../components/Music'

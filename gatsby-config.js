@@ -7,7 +7,7 @@ module.exports = {
     title: `雪山深处`,
     author: {
       name: `Taozc`,
-      summary: `广州大学生一枚，喜欢动漫、二战、后摇、新古典和小动物，最近在研究/学习Openwrt和Gatsby。`,
+      summary: `广州大学生一枚，喜欢动漫、二战、后摇、新古典和小动物，最近在学习C++、JavaScript和Gatsby。`,
     },
     description: `一个个人博客，记录所思所想`,
     siteUrl: `https://snow-mountain.life/`,
