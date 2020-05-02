@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import { rhythm, scale } from "../utils/typography"
 import DarkMode from "./DarkMode"
+import RSS from "@material-ui/icons/RssFeedRounded"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -65,12 +65,12 @@ const Layout = ({ location, title, children }) => {
       </header>
       <main>{children}</main>
       <footer style={{textAlign: 'center', fontSize: '0.8rem',}} >
-        © <a href="http://beian.miit.gov.cn/">粤ICP备20015580号</a>
-        <br></br>
-        -{new Date().getFullYear()}- <br></br>
-        由
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-        强力驱动
+        <a href="http://beian.miit.gov.cn/">粤ICP备20015580号</a>
+        <br/>
+        ©{new Date().getFullYear()}<br/>
+        由<a href="https://www.gatsbyjs.org">Gatsby</a>强力驱动<br/>
+        <RSS style={{fontSize:'14px'}} />
+        <a href="https://snow-mountain.life/rss.xml">RSS订阅</a>
       </footer>
     </div>
   )

@@ -10,7 +10,7 @@ description: "编译MiniEAP来使用GZHU校园网，同时与Mentohust做对比"
 
 * 安装相关依赖库
 
-```sh
+```bash
 sudo apt-get update
 sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip gawk
 sudo apt-get install subversion mercurial
@@ -18,7 +18,7 @@ sudo apt-get install subversion mercurial
 
 * 安装C编译环境
 
-```sh
+```bash
 sudo apt-get install ccache
 ```
 
@@ -27,7 +27,7 @@ sudo apt-get install ccache
 
 * 解压SDK
 
-```sh
+```bash
 tar xjf (SDK包名)
 ```
 
@@ -35,13 +35,13 @@ tar xjf (SDK包名)
 
 * 定位到SDK目录(即解压出来的文件夹)
 
-```sh
+```bash
 cd /sdk目录
 ```
 
 * 克隆git
 
-```sh
+```bash
 git clone https://github.com/ysc3839/openwrt-minieap.git -b gzhu package/minieap
 ```
 
@@ -49,13 +49,13 @@ git clone https://github.com/ysc3839/openwrt-minieap.git -b gzhu package/minieap
 
 * 选择要编译的包
 
-```sh
+```bash
 make menuconfig # 依次选择 "Network" "minieap" "save" "OK" 然后一直"Exit"回到控制台
 ```
 
 * 开始编译
 
-```sh
+```bash
 make package/minieap/compile V=s
 ```
 
@@ -69,32 +69,32 @@ ipk文件就在 `bin/(SDK对应的处理器)/packages/base/` 中
 
 * 定位到SDK目录
 
-```sh
+```bash
 cd /sdk目录
 ```
 
 * 安装luci feed
 
-```sh
+```bash
 ./scripts/feeds update luci
 ./scripts/feeds install -a
 ```
 
 * 克隆git
 
-```sh
+```bash
 git clone https://github.com/ysc3839/luci-proto-minieap.git package/luci-proto-minieap
 ```
 
 * 选择要编译的包
 
-```sh
+```bash
 make menuconfig # 依次选择 "LuCI" "Protocols" "luci-proto-minieap" "save" "OK" 然后一直"Exit"回到控制台
 ```
 
 * 开始编译
 
-```sh
+```bash
 make package/luci-proto-minieap/compile V=s
 ```
 

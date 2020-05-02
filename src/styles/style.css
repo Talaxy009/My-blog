@@ -96,6 +96,11 @@ body.dark-mode
 	width: 50%;
 }
 
+.dark-mode .MuiCard-root
+{
+	background-color: #2b2b2b;
+}
+
 @media (max-width: 650px)
 {
 	.cardlist{

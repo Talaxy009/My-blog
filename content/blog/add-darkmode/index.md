@@ -97,7 +97,7 @@ export default DarkMode;
 
 ## 修改layout.js
 
-现在我们已经有了能调用夜间模式插件的DarkMode.js——也就是那一对Buttons，剩下要做的就是让每个页面都有这对Buttons，方法便是修改layout.js的`<header>`。
+现在我们已经有了能调用夜间模式插件的DarkMode.js——也就是那个Button，剩下要做的就是让每个页面都有个Button，方法便是修改layout.js的`<header>`。
 
 ```js
 import DarkMode from "./DarkMode"
