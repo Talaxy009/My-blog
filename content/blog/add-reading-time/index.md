@@ -56,16 +56,18 @@ export const pageQuery = graphql`
 export function formatReadingTime(minutes) {
   let cups = Math.round(minutes / 5);
   if (cups > 4) {
-    return `${new Array(Math.round(cups / Math.E))
+    return `${new Array(Math.round(cups / 4))
       .fill('🍚')
       .join('')} 阅读需要 ${minutes} 分钟`;
   } else {
-    return `${new Array(cups || 1).fill('🍵').join('')}阅读需要 ${minutes} 分钟`;
+    return `${new Array(cups || 1)
+      .fill('🍵')
+      .join('')} 阅读需要 ${minutes} 分钟`;
   }
 }
 ```
 
-每 5 minutes 会被转换为 1 cup 🍵（至少有 1 cup 🍵），当有 5 cups 🍵 以上时，每 e cups 🍵 会被转换为 1 🍚（约等于18mins，较为符合平均进餐时间）
+每 5 minutes 会被转换为 1 cup 🍵（至少有 1 cup 🍵），当有 4 cups 🍵 以上时，每 4 cups 🍵 会被转换为 1 🍚（即等于20mins，较为符合平均进餐时间）
 
 时间和emoji都可以自行修改，下附全部食物emoji~
 
