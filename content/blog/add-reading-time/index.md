@@ -50,32 +50,50 @@ export const pageQuery = graphql`
 
 ## 编写helper.js
 
-这是将时间数据转换成☕️或🍱并输出文本的主要文件
+这是将时间数据转换成🍵或🍚并输出文本的主要文件
 
 ```js
 export function formatReadingTime(minutes) {
   let cups = Math.round(minutes / 5);
-  if (cups > 5) {
+  if (cups > 4) {
     return `${new Array(Math.round(cups / Math.E))
-      .fill('🍱')
+      .fill('🍚')
       .join('')} 阅读需要 ${minutes} 分钟`;
   } else {
-    return `${new Array(cups || 1).fill('☕️').join('')}阅读需要 ${minutes} 分钟`;
+    return `${new Array(cups || 1).fill('🍵').join('')}阅读需要 ${minutes} 分钟`;
   }
 }
 ```
 
+每 5 minutes 会被转换为 1 cup 🍵（至少有 1 cup 🍵），当有 5 cups 🍵 以上时，每 e cups 🍵 会被转换为 1 🍚（约等于18mins，较为符合平均进餐时间）
+
+时间和emoji都可以自行修改，下附全部食物emoji~
+
+***
+
+🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🍅🍆🌽🍄🌰🍞🍖🍗🍔🍟🍕🍳🍲🍱🍘🍙🍚🍛🍜🍝🍠🍢🍣🍤🍥🍡🍦🍧🍨🍩🍪🎂🍰🍫🍬🍭🍮🍯🍼☕🍵🍶🍷🍸🍹🍺🍻🍴
+
+***
+
 ## 修改PostList.js
 
-这是我将index.js拆分后的文件，若你没有修改过index.js，则应在index.js中操作
+修改PostList.js中的`<small>`
+
+PostList.js是我将index.js拆分后的文件，若你没有修改过index.js，则应在index.js中操作
 
 ```js
 import { formatReadingTime } from "../utils/helper" //导入helper,路径请自行修改
 //略
-<small>
-    {node.frontmatter.date}
-    {` • ${formatReadingTime(node.timeToRead)}`} //插入代码
-</small>
+return (
+  <article key={node.fields.slug}>
+    <header>
+      <small>
+        {node.frontmatter.date}
+        {` • ${formatReadingTime(node.timeToRead)}`}
+      </small>
+    </header>
+  </article>
+)
 //略
 ```
 
