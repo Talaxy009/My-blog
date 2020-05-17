@@ -18,7 +18,7 @@ This is my blog, which is made with [Gatsby](https://www.gatsbyjs.org/).
 gatsby develop    # dev mode
 gatsby clean      # remove the .cache and public folders
 gatsby build      # build blog
-.\new             # add an article
+.\new             # add an basic article with date time by using new.exe
 ```
 
 ### Tips

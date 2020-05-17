@@ -6,58 +6,60 @@ description: "好马配好鞍，研究了两天总算是摸清楚了，现将步
 
 ## 一些有用的资料
 
-[Material UI官网](https://material-ui.com/zh/)
+[Material UI 官网](https://material-ui.com/zh/)
 
-[Material UI的一些Tabs样式](https://material-ui.com/zh/components/tabs/)
+[Material UI 的一些 Tabs 样式](https://material-ui.com/zh/components/tabs/)
 
-[Material UI的API](https://material-ui.com/zh/api/tab/)
+[Material UI 的 API](https://material-ui.com/zh/api/tab/)
 
-## 安装Material UI
+## 安装 Material UI
 
-cd到自己的文件夹跟目录后按照官网提示安装即可
+cd 到自己的文件夹跟目录后按照官网提示安装即可
 
-安装成功后根目录下的package.json应该会有以下段落
+安装成功后根目录下的 package.json 应该会有以下段落
 
-``` js
+```js
 "@material-ui/core": "^4.9.6",
 "@material-ui/styles": "^4.9.0",
 ```
 
-## 编写RouterTabs.js
+## 编写 RouterTabs.js
 
-在/src/components下新建RouterTabs.js
+在/src/components 下新建 RouterTabs.js
 
-``` js
-import React, { useState } from 'react'
-import { navigate } from 'gatsby'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
+```js
+import React, { useState } from "react";
+import { navigate } from "gatsby";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 
-const RouterTabs = ({ routers = [], currentPage}) => {
-  const [index] = useState(
-    routers.findIndex(v => v.link === currentPage)
-  )
+const RouterTabs = ({ routers = [], currentPage }) => {
+  const [index] = useState(routers.findIndex(v => v.link === currentPage));
   return (
-    <Tabs value={index} onChange={(_, value) => navigate(routers[value].link)} centered>
+    <Tabs
+      value={index}
+      onChange={(_, value) => navigate(routers[value].link)}
+      centered
+    >
       {routers.map(router => (
         <Tab label={router.name} key={router.link} />
       ))}
     </Tabs>
-  )
-}
+  );
+};
 
-export default RouterTabs
+export default RouterTabs;
 ```
 
-这段代码利用了Material UI来生成Tabs和根据gatsby-config.js来生成对应的Tab
+这段代码利用了 Material UI 来生成 Tabs 和根据 gatsby-config.js 来生成对应的 Tab
 
-## 修改gatsby-config.js
+## 修改 gatsby-config.js
 
-在gatsby-config.js顶部加入以下代码
+在 gatsby-config.js 顶部加入以下代码
 
 ```js
-const friendship = require('./friendship')
-require('dotenv').config()
+const friendship = require("./friendship");
+require("dotenv").config();
 ```
 
 在`social`段下方插入以下代码
@@ -76,62 +78,64 @@ menuLinks: [
 friendship: [...friendship],
 ```
 
-这些代码会获取根目录下friendship.js的数据，以提供给friends.js来生成页面，同时menulink储存的配置会提供给RouterTabs.js来生成对应的Tab
+这些代码会获取根目录下 friendship.js 的数据，以提供给 friends.js 来生成页面，同时 menulink 储存的配置会提供给 RouterTabs.js 来生成对应的 Tab
 
-## 编写friendship.js
+## 编写 friendship.js
 
-在根目录下新建friendship.js(一个push会对应一个展示出来的友链)
+在根目录下新建 friendship.js(一个 push 会对应一个展示出来的友链)
 
 ```js
-const friendship = []
-const push = (name, url, image = '' ) =>
-  friendship.push({ name, url, image })
+const friendship = [];
+const push = (name, url, image = "") => friendship.push({ name, url, image });
 
-push('友链名称', '友链网址', '友链Logo')
-push('友链名称', '友链网址', '友链Logo')
+push("友链名称", "友链网址", "友链Logo");
+push("友链名称", "友链网址", "友链Logo");
 
-module.exports = friendship
+module.exports = friendship;
 ```
 
 这个文件主要是为了更方便的存储友链的一些信息
 
-## 编写friends.js
+## 编写 friends.js
 
-在/src/pages/下新建friends.js
+在/src/pages/下新建 friends.js
 
 ```js
-import React from 'react'
-import { graphql } from 'gatsby'
-import { makeStyles } from '@material-ui/core/styles'
-import Image from 'gatsby-image'
+import React from "react";
+import { graphql } from "gatsby";
+import { makeStyles } from "@material-ui/core/styles";
+import Image from "gatsby-image";
 
-import Layout from '../components/layout'
-import RouterTabs from '../components/RouterTabs'
-import SEO from '../components/seo'
-import Bio from "../components/bio"
+import Layout from "../components/layout";
+import RouterTabs from "../components/RouterTabs";
+import SEO from "../components/seo";
+import Bio from "../components/bio";
 
 const useStyles = makeStyles({
   friends: {
-    margin: '1rem 0 0 0',
-  },
-})
+    margin: "1rem 0 0 0"
+  }
+});
 
 const FriendPage = props => {
-  const { data } = props
-  const classes = useStyles()
-  const siteTitle = data.site.siteMetadata.title
+  const { data } = props;
+  const classes = useStyles();
+  const siteTitle = data.site.siteMetadata.title;
 
-  const avatars = data.avatars.edges.map(avatar => avatar.node)
+  const avatars = data.avatars.edges.map(avatar => avatar.node);
 
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title="友情链接" />
-      <RouterTabs routers={data.site.siteMetadata.menuLinks} currentPage="/friends/" />
+      <RouterTabs
+        routers={data.site.siteMetadata.menuLinks}
+        currentPage="/friends/"
+      />
       <div className={classes.friends}>
         {data.site.siteMetadata.friendship.map(friend => {
           const image = avatars.find(v =>
             new RegExp(friend.image).test(v.relativePath)
-          )
+          );
           return (
             <div
               key={friend.name}
@@ -147,26 +151,24 @@ const FriendPage = props => {
                 style={{
                   flex: 1,
                   maxWidth: 50,
-                  borderRadius: '100%',
+                  borderRadius: "100%"
                 }}
                 imgStyle={{
-                  borderRadius: '50%',
+                  borderRadius: "50%"
                 }}
               />
-              <div
-                className="friend-card-content"
-              >
+              <div className="friend-card-content">
                 <span>{friend.name}</span>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default FriendPage
+export default FriendPage;
 
 export const pageQuery = graphql`
   query {
@@ -184,7 +186,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    avatars: allFile(filter: {relativeDirectory: {eq: "friend"}}) {
+    avatars: allFile(filter: { relativeDirectory: { eq: "friend" } }) {
       edges {
         node {
           relativePath
@@ -198,17 +200,17 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 ```
 
-这个文件用于生成友情链接的目录，设置了友链Logo保存的路径：`/content/assets/friend/`
+这个文件用于生成友情链接的目录，设置了友链 Logo 保存的路径：`/content/assets/friend/`
 
-## 修改index.js文件
+## 修改 index.js 文件
 
-在src/pages下的index.js文件的顶部添加
+在 src/pages 下的 index.js 文件的顶部添加
 
 ```js
-import RouterTabs from '../components/RouterTabs'
+import RouterTabs from "../components/RouterTabs";
 ```
 
 `<Bio />`段下方添加以下代码
@@ -217,78 +219,76 @@ import RouterTabs from '../components/RouterTabs'
 <RouterTabs routers={data.site.siteMetadata.menuLinks} currentPage="/" />
 ```
 
-这样便能在bio和推文之间给Tabs找个位置
+这样便能在 bio 和推文之间给 Tabs 找个位置
 
-至此便已经完成了80%，剩下的是调整友链页面的布局
+至此便已经完成了 80%，剩下的是调整友链页面的布局
 
-## 修改css文件
+## 修改 css 文件
 
-若没有可在src中新建一个并在gatsby-browser.js中import
+若没有可在 src 中新建一个并在 gatsby-browser.js 中 import
 
 添加以下代码
 
 ```css
-.friend-card
-{
- margin-top: 1rem;
- display: flex;
- text-decoration-color: transparent;
- align-items: center;
- justify-content: flex-start;
- cursor: pointer;
+.friend-card {
+  margin-top: 1rem;
+  display: flex;
+  text-decoration-color: transparent;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
-.friend-card-content
-{
- margin-left: 1rem;
+.friend-card-content {
+  margin-left: 1rem;
 }
 ```
 
-这里是让友链的Logo和名字并排显示并隔出一点距离
+这里是让友链的 Logo 和名字并排显示并隔出一点距离
 
-至此你的网页应该可以完美的显示Tabs和友链界面了(=v=)b
+至此你的网页应该可以完美的显示 Tabs 和友链界面了(=v=)b
 
 如果还是觉得不够的话？可继续进行如下操作
 
-## 自定义Tabs颜色
+## 自定义 Tabs 颜色
 
 在文件中增加以下代码
 
 ```js
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from "@material-ui/core/styles";
 
 const StyledTabs = withStyles({
   indicator: {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: '#009ba1', //Tabs光标颜色(自行修改，下同)
-  },
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "#009ba1" //Tabs光标颜色(自行修改，下同)
+  }
 })(props => <Tabs {...props} TabIndicatorProps={{ children: <div /> }} />);
 
 const StyledTab = withStyles({
   root: {
-    textTransform: 'none',
-    color: 'inherit',//未选中Tab的颜色
-    '&:hover': {
-      color: '#009ba1',//鼠标下Tab的颜色
+    textTransform: "none",
+    color: "inherit", //未选中Tab的颜色
+    "&:hover": {
+      color: "#009ba1" //鼠标下Tab的颜色
     },
-    '&$selected': {
-      color: '#009ba1',//已选中Tab的颜色
-    },
+    "&$selected": {
+      color: "#009ba1" //已选中Tab的颜色
+    }
   },
-  selected: {},
+  selected: {}
 })(props => <Tab disableRipple {...props} />);
 ```
 
 并将文件内原来的`<Tabs>`改为`<StyledTabs>`；`<Tab>`改为`<StyledTab>`
 
-## 优化friends页的顶部
+## 优化 friends 页的顶部
 
-为了让index页与friends页能有一样的顶部，可进行以下操作
+为了让 index 页与 friends 页能有一样的顶部，可进行以下操作
 
-在friends.js的`<SEO>`段下方插入`<Bio />`即可
+在 friends.js 的`<SEO>`段下方插入`<Bio />`即可
 
-最后为了防止header在friends页变小，可在src/components/下的layout.js下修改
+最后为了防止 header 在 friends 页变小，可在 src/components/下的 layout.js 下修改
 
 将
 
@@ -302,14 +302,14 @@ if (location.pathname === rootPath)
 if (location.pathname === rootPath||location.pathname === `/friends/`)
 ```
 
-这样便能防止header因为不是根目录而变小
+这样便能防止 header 因为不是根目录而变小
 
 ## 结语
 
 这次真的是受益匪浅！！！(=v=)b
 
-代码多是从[Edward Elric大佬](https://github.com/SASUKE40/sasuke40.github.io)和[Himself65大佬](https://github.com/Himself65/himself65.github.io)贵处搬来再经研究修改后得来的
+代码多是从[Edward Elric 大佬](https://github.com/SASUKE40/sasuke40.github.io)和[Himself65 大佬](https://github.com/Himself65/himself65.github.io)贵处搬来再经研究修改后得来的
 
-在研究Material UI官网教程的过程也逐步实现了如何进行以下诸如：自定义Tabs颜色、Tabs居中、优化friends页顶部等操作，最终完成了一个满意的作品，成就感爆棚！！！
+在研究 Material UI 官网教程的过程也逐步实现了如何进行以下诸如：自定义 Tabs 颜色、Tabs 居中、优化 friends 页顶部等操作，最终完成了一个满意的作品，成就感爆棚！！！
 
 以上

@@ -1,48 +1,48 @@
-const friendship = require('./friendship')
-const musiclist = require('./musiclist')
-require('dotenv').config()
+const friendship = require("./friendship");
+const musiclist = require("./musiclist");
+require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
     title: `雪山深处`,
     author: {
       name: `Taozc`,
-      summary: `广州大学生一枚，喜欢动漫、二战、后摇、新古典和小动物，最近在学习C++、JavaScript和Gatsby。`,
+      summary: `广州大学生一枚，喜欢动漫、二战、后摇、新古典和小动物，最近在学习C++、JavaScript和Gatsby。`
     },
     description: `一个个人博客，记录所思所想`,
     siteUrl: `https://snow-mountain.life/`,
     social: {
       twitter: `Taozc009`,
       github: `Talaxy009`,
-      pixiv: `15409749`,
+      pixiv: `15409749`
     },
     menuLinks: [
       {
-        name: '首页',
-        link: '/',
+        name: "首页",
+        link: "/"
       },
       {
-        name: '收藏',
-        link: '/collections/',
-      },
+        name: "收藏",
+        link: "/collections/"
+      }
     ],
     friendship: [...friendship],
-    musiclist: [...musiclist],
+    musiclist: [...musiclist]
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
+        name: `blog`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
+        name: `assets`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -51,20 +51,20 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-            },
+              maxWidth: 590
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
+          `gatsby-remark-smartypants`
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -72,8 +72,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-158975002-1`,
-      },
+        trackingId: `UA-158975002-1`
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -86,18 +86,18 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#009ba1`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
-      },
+        icon: `content/assets/gatsby-icon.png`
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
+        pathToConfigModule: `src/utils/typography`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ],
-}
+  ]
+};

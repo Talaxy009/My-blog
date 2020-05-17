@@ -1,20 +1,20 @@
-import React, { Fragment } from "react"
-import { Link} from "gatsby"
+import React, { Fragment } from "react";
+import { Link } from "gatsby";
 
-import { rhythm } from "../utils/typography"
-import { formatReadingTime } from "../utils/helper"
+import { rhythm } from "../utils/typography";
+import { formatReadingTime } from "../utils/helper";
 
 const PostList = ({ posts = [] }) => {
-    return(
+  return (
     <Fragment>
-        {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
             <header>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4),
+                  marginBottom: rhythm(1 / 4)
                 }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -29,15 +29,15 @@ const PostList = ({ posts = [] }) => {
             <section>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
+                  __html: node.frontmatter.description || node.excerpt
                 }}
               />
             </section>
           </article>
-        )
-      })}</Fragment>
-        
-    )
-}
+        );
+      })}
+    </Fragment>
+  );
+};
 
-export default PostList
+export default PostList;
