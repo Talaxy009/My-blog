@@ -14,7 +14,7 @@ module.exports = {
     social: {
       twitter: `Taozc009`,
       github: `Talaxy009`,
-      pixiv: `15409749`
+      pixiv: `009ba1`
     },
     menuLinks: [
       {
@@ -30,6 +30,7 @@ module.exports = {
     musiclist: [...musiclist]
   },
   plugins: [
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -69,6 +70,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-use-dark-mode`,
+    `gatsby-plugin-material-ui`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -96,8 +99,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`
       }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 };

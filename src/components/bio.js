@@ -75,7 +75,7 @@ const Bio = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={`https://pixiv.net/users/${social.pixiv}`}
+          href={`https://pixiv.me/${social.pixiv}`}
         >
           Pixiv
         </a>

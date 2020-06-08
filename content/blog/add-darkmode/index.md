@@ -18,7 +18,9 @@ description: "又实现了一个一直想要的功能，现将过程记录于此
 
 - gatsby-plugin-use-dark-mode：注入`noflash.js`来防止刷新时模式切换照成的闪光；
 
-- Material UI(Icons、Button)：提供漂亮的按键和图标
+- gatsby-plugin-material-ui：优化 Material UI 在 Gatsby 中的使用（可选）
+
+- Material UI(icons、core)：提供漂亮的按键和图标
 
 ## 准备步骤
 
@@ -26,14 +28,17 @@ description: "又实现了一个一直想要的功能，现将过程记录于此
 
 ```bash
 npm install gatsby-plugin-use-dark-mode use-dark-mode
-npm install @material-ui/core
+npm install @material-ui/core @material-ui/icons
 ```
 
-- 在 gatsby-config.js 中启用`gatsby-plugin-use-dark-mode`
+- 在 gatsby-config.js 中启用`gatsby-plugin-use-dark-mode`和`gatsby-plugin-material-ui`
 
 ```js
 module.exports = {
-  plugins: [`gatsby-plugin-use-dark-mode`]
+  plugins: [
+    `gatsby-plugin-use-dark-mode`,
+    `gatsby-plugin-material-ui`,
+  ]
 };
 ```
 

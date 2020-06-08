@@ -12,16 +12,23 @@ description: "好马配好鞍，研究了两天总算是摸清楚了，现将步
 
 [Material UI 的 API](https://material-ui.com/zh/api/tab/)
 
-## 安装 Material UI
+## 准备步骤
 
-cd 到自己的文件夹跟目录后按照官网提示安装即可
+- 安装 Material UI
 
-安装成功后根目录下的 package.json 应该会有以下段落
+```bash
+npm install gatsby-plugin-material-ui @material-ui/core
+```
+
+- 在 gatsby-config.js 中启用`gatsby-plugin-material-ui`
 
 ```js
-"@material-ui/core": "^4.9.6",
-"@material-ui/styles": "^4.9.0",
+module.exports = {
+  plugins: [`gatsby-plugin-material-ui`,]
+};
 ```
+
+值得一提的是`gatsby-plugin-material-ui`是可选插件，其主要作用是优化 Material UI 在 Gatsby 中的使用，之前我一直不知道也没有使用这个插件，导致网站每次载入的时候与 Material UI 相关的组件的样式都要载入好久
 
 ## 编写 RouterTabs.js
 
