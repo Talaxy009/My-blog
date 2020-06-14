@@ -67,7 +67,7 @@ export function formatReadingTime(minutes) {
 }
 ```
 
-每 5 minutes 会被转换为 1 cup 🍵（至少有 1 cup 🍵），当有 4 cups 🍵 以上时，每 4 cups 🍵 会被转换为 1 🍚（即等于 20mins，较为符合平均进餐时间）
+每 5 minutes 会被转换为 1 cup 🍵（至少有 1 cup 🍵），当有 4 cups 🍵 以上时，所有的 🍵 会以4个转换为 1 🍚（即等于 20mins，较为符合平均进餐时间）
 
 时间和 emoji 都可以自行修改，下附全部食物 emoji~
 

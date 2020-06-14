@@ -28,7 +28,7 @@ description: "又实现了一个一直想要的功能，现将过程记录于此
 
 ```bash
 npm install gatsby-plugin-use-dark-mode use-dark-mode
-npm install @material-ui/core @material-ui/icons
+npm install gatsby-plugin-material-ui @material-ui/core @material-ui/icons
 ```
 
 - 在 gatsby-config.js 中启用`gatsby-plugin-use-dark-mode`和`gatsby-plugin-material-ui`

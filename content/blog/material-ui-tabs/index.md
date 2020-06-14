@@ -79,7 +79,7 @@ menuLinks: [
       },
       {
         name: '友情链接',
-        link: '/friends',
+        link: '/friends/',
       },
     ],
 friendship: [...friendship],
