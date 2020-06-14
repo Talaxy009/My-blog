@@ -8,7 +8,7 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
 
-  if (location.pathname === rootPath || location.pathname === `/collections/`) {
+  if (location.pathname === rootPath || location.pathname === `/collections/` || location.pathname === `/about/`) {
     header = (
       <h1
         style={{
@@ -64,7 +64,7 @@ const Layout = ({ location, title, children }) => {
         <DarkMode />
       </header>
       <main>{children}</main>
-      <footer style={{ textAlign: "center", fontSize: "0.8rem" }}>
+      <footer style={{ textAlign: "center", fontSize: "0.8rem", margin: "1rem 0 0" }}>
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -73,6 +73,14 @@ const Layout = ({ location, title, children }) => {
           粤ICP备20015580号
         </a>
         <br />©{new Date().getFullYear()}
+        <br />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+        >
+          CC BY-NC-SA 4.0
+        </a>
         <br />由
         <a
           target="_blank"
