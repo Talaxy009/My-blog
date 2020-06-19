@@ -1,71 +1,64 @@
-html::-webkit-scrollbar-track
-{
-	 background-color: inherit;
-	 border-radius: 8px;
-}
- 
-html::-webkit-scrollbar
-{
-	 width: 8px;
-	 background-color: inherit;
-}
- 
-html::-webkit-scrollbar-thumb
-{
-	 border-radius: 8px;
-	 background-color: #009ba1;
-}
- 
-html::-webkit-scrollbar-thumb:hover
-{
-	 background-color: #008ba1;
+html::-webkit-scrollbar-track {
+	background-color: inherit;
+	border-radius: 8px;
 }
 
-img
-{
+html::-webkit-scrollbar {
+	width: 8px;
+	background-color: inherit;
+}
+
+html::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #009ba1;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+	background-color: #008ba1;
+}
+
+img {
 	border-radius: 4px;
 }
 
-body
-{
-    font-family: 
-    "Helvetica Neue",
-    Helvetica,Arial,
-    "Microsoft Yahei",
-    "Hiragino Sans GB",
-    "Heiti SC",
-    "WenQuanYi Micro Hei",
-	sans-serif;
+body {
+	font-family:
+		"Helvetica Neue",
+		Helvetica, Arial,
+		"Microsoft Yahei",
+		"Hiragino Sans GB",
+		"Heiti SC",
+		"WenQuanYi Micro Hei",
+		sans-serif;
 	transition: background-color 0.3s ease;
 }
 
-body.light-mode
-{
+body.light-mode {
 	background-color: #fff;
 	color: #333;
 }
 
-body.dark-mode
-{
+body.dark-mode {
 	background-color: #212121;
 	color: #999;
 }
 
-.dark-mode blockquote
-{
+.dark-mode blockquote {
 	color: #999;
 	border-left: 0.32813rem solid #999;
 }
 
-.friend-card-list
-{
-	margin: 0 0 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
+.dark-mode #gh path {
+	fill: #fff;
 }
 
-.friend-card
-{
+.friend-card-list {
+	margin: 0 0 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.friend-card {
 	margin-top: 1rem;
 	display: flex;
 	text-decoration-color: transparent;
@@ -75,13 +68,11 @@ body.dark-mode
 	width: 50%;
 }
 
-.friend-card-content
-{
+.friend-card-content {
 	margin-left: 1rem;
 }
 
-.cardlist
-{
+.cardlist {
 	max-width: 100%;
 	padding: 1rem 0 1rem;
 	margin: 1rem 0 1rem;
@@ -89,33 +80,31 @@ body.dark-mode
 	flex-wrap: wrap;
 }
 
-.music-card
-{
+.music-card {
 	padding: 0 1rem 1rem;
 	width: 50%;
 }
 
-.dark-mode .MuiCard-root
-{
+.dark-mode .MuiCard-root {
 	background-color: #1e1e1e;
 }
 
-@media (max-width: 650px)
-{
-	.cardlist{
+@media (max-width: 650px) {
+	.cardlist {
 		display: block;
 	}
-	.music-card{
+
+	.music-card {
 		width: 100%;
 	}
 }
 
-@media (max-width: 400px)
-{
-	.friend-card-list{
+@media (max-width: 400px) {
+	.friend-card-list {
 		display: block;
 	}
-	.friend-card{
+
+	.friend-card {
 		width: 100%;
 	}
 }
