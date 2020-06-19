@@ -37,7 +37,7 @@ npm install gatsby-plugin-material-ui @material-ui/core @material-ui/icons
 module.exports = {
   plugins: [
     `gatsby-plugin-use-dark-mode`,
-    `gatsby-plugin-material-ui`,
+    `gatsby-plugin-material-ui`
   ]
 };
 ```

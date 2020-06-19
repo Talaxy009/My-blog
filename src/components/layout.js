@@ -8,7 +8,11 @@ const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
 
-  if (location.pathname === rootPath || location.pathname === `/collections/` || location.pathname === `/about/`) {
+  if (
+    location.pathname === rootPath ||
+    location.pathname === `/collections/` ||
+    location.pathname === `/about/`
+  ) {
     header = (
       <h1
         style={{
@@ -64,7 +68,9 @@ const Layout = ({ location, title, children }) => {
         <DarkMode />
       </header>
       <main>{children}</main>
-      <footer style={{ textAlign: "center", fontSize: "0.8rem", margin: "1rem 0 0" }}>
+      <footer
+        style={{ textAlign: "center", fontSize: "0.8rem", margin: "1rem 0 0" }}
+      >
         <a
           target="_blank"
           rel="noopener noreferrer"

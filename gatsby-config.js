@@ -34,7 +34,6 @@ module.exports = {
     musiclist: [...musiclist]
   },
   plugins: [
-    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
