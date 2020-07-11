@@ -39,7 +39,7 @@ const Bio = () => {
     >
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
+        title={author.name}
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
@@ -59,6 +59,7 @@ const Bio = () => {
           target="_blank"
           rel="noopener noreferrer"
           href={`https://twitter.com/${social.twitter}`}
+          title="Twitter"
         >
           <svg id="tw" style={{ width: "20px", height: "20px" }} viewBox="0 0 24 24">
             <path
@@ -72,6 +73,7 @@ const Bio = () => {
           target="_blank"
           rel="noopener noreferrer"
           href={`https://github.com/${social.github}`}
+          title="Github"
         >
           <svg id="gh" style={{ width: "20px", height: "20px" }} viewBox="0 0 24 24">
             <path
@@ -85,6 +87,7 @@ const Bio = () => {
           target="_blank"
           rel="noopener noreferrer"
           href={`https://pixiv.me/${social.pixiv}`}
+          title="Pixiv"
         >
           <svg id="px" style={{ width: "20px", height: "20px" }} viewBox="0 0 24 24">
             <path
