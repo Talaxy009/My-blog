@@ -3,6 +3,6 @@ const push = (name, url, image = "", description = "") =>
   friendship.push({ name, url, image, description });
 
 push("WAI科技社", "https://waitech.cn/", "WAI.jpg");
-push("路由器", "http://mountain.qicp.vip/", "router.png");
+push("薪典", "https://syndict.com/", "syndict.png");
 
 module.exports = friendship;
