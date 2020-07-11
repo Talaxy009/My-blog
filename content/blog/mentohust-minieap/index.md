@@ -59,7 +59,7 @@ make menuconfig # 依次选择 "Network" "minieap" "save" "OK" 然后一直"Exit
 make package/minieap/compile V=s
 ```
 
-ipk 文件就在 `bin/(SDK对应的处理器)/packages/base/` 中
+ipk 文件就在 `bin/packages/(处理器架构)/base/` 中
 
 ### 编译 luci-proto-minieap
 
