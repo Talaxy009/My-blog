@@ -36,11 +36,15 @@ body {
 body.light-mode {
 	background-color: #fff;
 	color: #333;
+	--inlineCode-bg: rgba(255,229,100,0.2);
+    --inlineCode-text: #1a1a1a;
 }
 
 body.dark-mode {
 	background-color: #212121;
 	color: #999;
+	--inlineCode-bg: rgba(115,124,153,0.2);
+    --inlineCode-text: #ffee93;
 }
 
 .dark-mode blockquote {
