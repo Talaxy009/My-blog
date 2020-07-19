@@ -39,5 +39,6 @@ int main(int argc, char *argv[])
            << setw(3) << setfill('0') << setiosflags(ios::right) << rawtime.wMilliseconds << "Z\"";
     date = format.str();
     index << "---\ntitle: \ndate: " << date << "\ndescription: \n---\n";
+    system("pause");
     return 0;
 }
