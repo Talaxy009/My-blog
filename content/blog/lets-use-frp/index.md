@@ -37,7 +37,7 @@ vhost_http_port = 8080
 
 * 启动 frps：
 
-```sh
+```shell
 frps -c ./frps.ini
 ```
 
@@ -99,3 +99,15 @@ killall -9 frpc
 ```
 
 即可
+
+## 使用 openwrt-frpc 和 luci-app-frpc
+
+7月21日更新
+
+在折腾了两天启动脚本想让 frpc 开机自启动无果后，我突然发现了 Github 上早有大佬针对 Openwrt 编写了[openwrt-frpc](https://github.com/kuoruan/openwrt-frp)和[luci-app-frpc](https://github.com/kuoruan/luci-app-frpc)！
+
+立马 Star→下载→安装→体验！
+
+啊，这就是我一直想要的！
+
+具体设置就不介绍了，设置名称跟上面的 frpc.ini 文件里的都是一一对应的，很好上手~
