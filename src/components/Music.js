@@ -4,9 +4,9 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Image from "gatsby-image";
 import CardContent from "@material-ui/core/CardContent";
-import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import MuiExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import MuiExpansionPanel from "@material-ui/core/Accordion";
+import ExpansionPanelDetails from "@material-ui/core/AccordionDetails";
+import MuiExpansionPanelSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const ExpansionPanel = withStyles({
