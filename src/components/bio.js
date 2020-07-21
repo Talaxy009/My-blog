@@ -4,7 +4,7 @@ import Image from "gatsby-image";
 import { rhythm } from "../utils/typography";
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
+  const query = graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
@@ -27,7 +27,9 @@ const Bio = () => {
         }
       }
     }
-  `);
+  `;
+
+  const data = useStaticQuery(query)
 
   const { author, social } = data.site.siteMetadata;
   return (
