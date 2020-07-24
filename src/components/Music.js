@@ -43,7 +43,7 @@ const Music = ({ musicImages = [], props = [], data = [] }) => {
               <div>
                 <Card
                   style={{
-                    transition: "background-color 0.3s ease",
+                    transition: "background-color 0.5s ease",
                     color: "inherit"
                   }}
                 >
