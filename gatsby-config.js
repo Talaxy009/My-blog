@@ -7,7 +7,7 @@ module.exports = {
     title: `雪山深处`,
     author: {
       name: `Taozc`,
-      summary: `🏠宅家自闭中······`
+      summary: `✈旅行中~`
     },
     description: `一个个人博客，记录所思所想`,
     siteUrl: `https://snow-mountain.life/`,
