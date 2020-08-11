@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import Slide from '@material-ui/core/Slide';
-import Grow from '@material-ui/core/Grow';
+import Slide from "@material-ui/core/Slide";
+import Grow from "@material-ui/core/Grow";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import RouterTabs from "../components/RouterTabs";
@@ -33,7 +33,13 @@ const AboutPage = props => {
           我
         </p>
       </Grow>
-      <Slide direction="up" in={true} {...{ timeout: 500 }} mountOnEnter unmountOnExit>
+      <Slide
+        direction="up"
+        in={true}
+        {...{ timeout: 500 }}
+        mountOnEnter
+        unmountOnExit
+      >
         <div>
           <Card
             style={{

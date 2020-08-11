@@ -1,6 +1,6 @@
 import React from "react";
 import useDarkMode from "use-dark-mode";
-import Slide from "@material-ui/core/Slide"
+import Slide from "@material-ui/core/Slide";
 import Sun from "@material-ui/icons/WbSunnyRounded";
 import Moon from "@material-ui/icons/Brightness2Rounded";
 import IconButton from "@material-ui/core/IconButton";
@@ -18,7 +18,7 @@ const DarkMode = () => {
           in={darkMode.value}
           appear={false}
           {...{ timeout: 500 }}
-          style={{ transitionDelay: darkMode.value ? '500ms' : '0ms' }}
+          style={{ transitionDelay: darkMode.value ? "500ms" : "0ms" }}
           mountOnEnter
           unmountOnExit
         >
@@ -29,7 +29,7 @@ const DarkMode = () => {
           in={!darkMode.value}
           appear={false}
           {...{ timeout: 500 }}
-          style={{ transitionDelay: darkMode.value ? '0ms' : '500ms' }}
+          style={{ transitionDelay: darkMode.value ? "0ms" : "500ms" }}
           mountOnEnter
           unmountOnExit
         >

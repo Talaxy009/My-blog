@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Image from "gatsby-image";
-import Grow from '@material-ui/core/Grow';
+import Grow from "@material-ui/core/Grow";
 import CardContent from "@material-ui/core/CardContent";
 import MuiAccordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -75,7 +75,9 @@ const Music = ({ musicImages = [], props = [], data = [] }) => {
                     style={{ backgroundColor: "inherit", color: "inherit" }}
                   >
                     <AccordionSummary
-                      expandIcon={<ExpandMoreIcon style={{ color: "#8f8f8f" }} />}
+                      expandIcon={
+                        <ExpandMoreIcon style={{ color: "#8f8f8f" }} />
+                      }
                       id={music.image}
                     ></AccordionSummary>
                     <AccordionDetails>

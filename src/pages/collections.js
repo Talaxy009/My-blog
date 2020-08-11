@@ -11,7 +11,7 @@ const CollectionsPage = props => {
   const { data } = props;
 
   const siteTitle = data.site.siteMetadata.title;
-  const avatars = data.avatars.edges.map(avatar => avatar.node);
+  const avatars = data.avatars.edges.map(avatars => avatars.node);
   const musicImages = data.musicImages.edges.map(
     musicImages => musicImages.node
   );
