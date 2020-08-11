@@ -38,7 +38,9 @@ int main(int argc, char *argv[])
            << setw(2) << setfill('0') << setiosflags(ios::right) << rawtime.wSecond << '.'
            << setw(3) << setfill('0') << setiosflags(ios::right) << rawtime.wMilliseconds << "Z\"";
     date = format.str();
-    index << "---\ntitle: \ndate: " << date << "\ndescription: \n---\n";
+    index << "---\ntitle: \ndate: " << date << "\ndescription: \nimg: \"./img.png\"\n---\n";
+    index.close();
+    cout<<"Created successfully!"<<endl;
     system("pause");
     return 0;
 }
