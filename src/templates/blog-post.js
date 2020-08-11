@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 import { formatReadingTime } from "../utils/helper";
+import Image from "gatsby-image";
 import "../styles/code.css";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -21,6 +21,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header>
+          <Image fluid={post.frontmatter.img.childImageSharp.fluid} />
           <h1
             style={{
               marginTop: rhythm(1),
@@ -99,6 +100,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY年MM月DD日")
         description
+        img {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

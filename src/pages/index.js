@@ -50,6 +50,25 @@ export const pageQuery = graphql`
             date(formatString: "YYYY年MM月DD日")
             title
             description
+            img {
+              childImageSharp {
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    articleImages: allFile(filter: { relativeDirectory: { eq: "blog" } }) {
+      edges {
+        node {
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }

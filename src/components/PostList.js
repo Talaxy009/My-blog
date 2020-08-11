@@ -2,27 +2,47 @@ import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import { rhythm } from "../utils/typography";
 import { formatReadingTime } from "../utils/helper";
-import Slide from '@material-ui/core/Slide';
+import Image from "gatsby-image";
+import Slide from "@material-ui/core/Slide";
 
-const PostList = ({ posts = [] }) => {
+const PostList = ({ posts = [], articleImages = [] }) => {
   return (
     <Fragment>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
+
         return (
-          <article key={node.fields.slug}>
-            <Slide in={true} direction={"up"} {...{ timeout: 500 }} mountOnEnter unmountOnExit>
-              <div>
+          <div className="post-item" key={node.fields.slug}>
+            <Slide
+              in={true}
+              direction={"right"}
+              {...{ timeout: 500 }}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div className="post-image">
+                <Link to={node.fields.slug}>
+                  <Image fluid={node.frontmatter.img.childImageSharp.fluid} />
+                </Link>
+              </div>
+            </Slide>
+            <Slide
+              in={true}
+              direction={"up"}
+              {...{ timeout: 500 }}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div className="post-about">
                 <header>
-                  <h3
+                  <p
                     style={{
-                      marginBottom: rhythm(1 / 4)
+                      marginBottom: rhythm(1 / 4),
+                      fontSize: "1.4rem"
                     }}
                   >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
+                    <Link to={node.fields.slug}>{title}</Link>
+                  </p>
                   <small>
                     {node.frontmatter.date}
                     {` • ${formatReadingTime(node.timeToRead)}`}
@@ -37,7 +57,7 @@ const PostList = ({ posts = [] }) => {
                 </section>
               </div>
             </Slide>
-          </article>
+          </div>
         );
       })}
     </Fragment>
