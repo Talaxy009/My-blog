@@ -35,64 +35,11 @@ img: "img.png"
 
 - ~~修改 Bio 头像大小并解决质量较低的问题~~
 
-修改/src/components/bio.js，将
+将 bio.js 文件中头像的 fixed 样式换成 fluid 即可，具体可参照[官方文档](https://www.gatsbyjs.org/docs/gatsby-image/)
 
-```js
-//略
-`
-fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-`
-//略
-<Image
-  fixed={data.avatar.childImageSharp.fixed}
-  alt={author.name}
-  style={{
-    marginRight: rhythm(1 / 2),
-    marginBottom: 0,
-    minWidth: 50,
-    borderRadius: `100%`,
-  }}
-  imgStyle={{
-    borderRadius: `50%`,
-  }}
-/>
-//略
-```
+- ~~修改首页文章排列样式~~
 
-修改为
-
-```js
-//略
-`
-fixed(width: 70, height: 70, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
-`
-//略
-<Image
-  fixed={data.avatar.childImageSharp.fixed}
-  alt={author.name}
-  style={{
-    marginRight: rhythm(1 / 2),
-    marginBottom: 0,
-    minWidth: 70,
-    borderRadius: `100%`,
-  }}
-  imgStyle={{
-    borderRadius: `50%`,
-  }}
-/>
-//略
-```
-
-原因是 Gatsby 的默认`quality`为 50，将其修改为 100 或更大的数值即可，另外要注意的是`graphql`中的`width`和`high`要和下面的`minWidth`相同，具体可参照[官方文档](https://www.gatsbyjs.org/docs/gatsby-image/)
-
-## 还需解决的问题
-
-- 修改首页文章排列样式
-- 不会 JS
+- ~~不会 JS~~
 
 ## 使用心得
 
