@@ -2,6 +2,7 @@
 title: 用frp来在OpenWrt下实现内网穿透
 date: "2020-07-19T19:33:52.588Z"
 description: 最近从PandoraBox转到OpenWrt阵营，无奈原本的Phddns无法使用了，今天摸索了下frp，发现出乎意料的简单！
+img: "img.png"
 ---
 
 最近从 PandoraBox 转到 OpenWrt 阵营，无奈原本的 phddns 无法使用了，今天摸索了下 frp，发现出乎意料的简单！下面以 Windows Server 2016 来作服务端，以 OpenWrt 18.06.8 来作客户端进行演示。

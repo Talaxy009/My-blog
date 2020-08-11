@@ -1,7 +1,8 @@
 ---
 title: 利用gatsby-plugin-use-dark-mode来添加夜间模式功能
 date: "2020-05-01T15:37:09.233Z"
-description: "一直以来，夜间模式都是人类眼睛的好朋友，但却常常被忽视。为了推动“夜间模式革命”，为人类带去黑暗，特写此文。"
+description: "一直以来，夜间模式都是人类眼睛的好朋友，但却常常被忽视。为了推动“夜间模式革命”，为人类带去黑暗，特写此文"
+img: "./img.png"
 ---
 
 > 一直以来，夜间模式都是人类眼睛的好朋友，但却常常被忽视。为了推动“夜间模式革命”，为人类带去黑暗，特写此文。
@@ -35,10 +36,7 @@ npm install gatsby-plugin-material-ui @material-ui/core @material-ui/icons
 
 ```js
 module.exports = {
-  plugins: [
-    `gatsby-plugin-use-dark-mode`,
-    `gatsby-plugin-material-ui`
-  ]
+  plugins: [`gatsby-plugin-use-dark-mode`, `gatsby-plugin-material-ui`]
 };
 ```
 

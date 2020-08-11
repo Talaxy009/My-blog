@@ -2,6 +2,7 @@
 title: 动手编译适合自己路由器的ipk
 date: "2020-03-22T18:11:00.000Z"
 description: "编译MiniEAP来使用GZHU校园网，同时与Mentohust做对比"
+img: "img.png"
 ---
 
 ## 编译（以交叉编译为例）

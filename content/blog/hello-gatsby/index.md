@@ -2,6 +2,7 @@
 title: Gatsby初体验
 date: "2020-03-17T15:01:00.000Z"
 description: "了不起的盖茨比"
+img: "img.png"
 ---
 
 用了一个下午终于成功把博客转移到了 Gatsby 上来依靠它生成静态 Html 文件。
