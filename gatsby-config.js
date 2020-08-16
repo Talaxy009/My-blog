@@ -101,6 +101,14 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`
       }
+    },
+    {
+      resolve: `gatsby-plugin-valine`,
+      options: {
+        appId: `uNA1YWiX0B1smHYzKFAUD9kS-9Nh9j0Va`,
+        appKey: `uTK9cTmOLI8pQ7WSGGmKMP2K`,
+        avatar: `robohash`,
+      },
     }
   ]
 };

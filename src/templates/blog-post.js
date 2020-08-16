@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 import { formatReadingTime } from "../utils/helper";
+import Valine from "gatsby-plugin-valine";
 import Image from "gatsby-image";
 import "../styles/code.css";
 
@@ -51,7 +52,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </footer>
       </article>
-
       <nav>
         <ul
           style={{
@@ -78,6 +78,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
+      <Valine path={post.frontmatter.title} />
     </Layout>
   );
 };
