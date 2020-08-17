@@ -62,17 +62,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             padding: 0
           }}
         >
-          <li>
+          <li style={{ maxWidth: `40%` }}>
+            上一篇
+            <br />
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li style={{ maxWidth: `40%`, textAlign: `right` }}>
+            下一篇
+            <br />
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title}
               </Link>
             )}
           </li>
