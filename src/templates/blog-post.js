@@ -52,36 +52,33 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </footer>
       </article>
-      <nav>
-        <ul
+      <div className="pagination">
+        <div
           style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0
+            width: `100%`,
+            margin: `0 auto`
           }}
         >
-          <li style={{ maxWidth: `40%` }}>
-            上一篇
-            <br />
-            {previous && (
+          {previous && (
+            <div style={{ float: `left`, maxWidth: `40%` }}>
+              上一篇
+              <br />
               <Link to={previous.fields.slug} rel="prev">
                 {previous.frontmatter.title}
               </Link>
-            )}
-          </li>
-          <li style={{ maxWidth: `40%`, textAlign: `right` }}>
-            下一篇
-            <br />
-            {next && (
+            </div>
+          )}
+          {next && (
+            <div style={{ float: `right`, maxWidth: `40%`, textAlign: `right` }}>
+              下一篇
+              <br />
               <Link to={next.fields.slug} rel="next">
                 {next.frontmatter.title}
               </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+            </div>
+          )}
+        </div>
+      </div>
       <Valine path={post.frontmatter.title} />
     </Layout>
   );

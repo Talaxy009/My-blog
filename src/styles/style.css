@@ -61,7 +61,8 @@ body.dark-mode {
 	fill: #fff;
 }
 
-.post-image, .post-about {
+.post-image,
+.post-about {
 	width: 50%;
 	padding: 1rem 0.5rem 0 0.5rem;
 	flex: 0 0 50%;
@@ -102,6 +103,11 @@ body.dark-mode {
 
 .dark-mode .MuiCard-root {
 	background-color: #1e1e1e;
+}
+
+.pagination {
+	margin-bottom: 1rem;
+	display: flex;
 }
 
 @media (max-width: 650px) {
