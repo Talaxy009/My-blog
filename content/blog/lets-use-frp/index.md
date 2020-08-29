@@ -38,7 +38,7 @@ vhost_http_port = 8080
 
 - 启动 frps：
 
-```shell
+```powershell
 frps -c ./frps.ini
 ```
 
