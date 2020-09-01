@@ -109,7 +109,7 @@ make package/luci-proto-minieap/compile V=s
 
 具体使用情况还有待返校才能发现（QAQ 我想返校昂）
 
-## 如何使用 MiniEAP （8月30日更新）
+## 如何使用 MiniEAP （8 月 30 日更新）
 
 - 在 `网络->接口` 中，确认 wan 口协议为 `DHCP 客户端`
 - 添加一个接口为 `eth0.2` 协议为 `MiniEAP 客户端` 的接口，并输入账号和密码，将数据包插件设为 `rjv3`

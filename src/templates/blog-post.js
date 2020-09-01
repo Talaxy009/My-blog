@@ -69,7 +69,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
           )}
           {next && (
-            <div style={{ float: `right`, maxWidth: `40%`, textAlign: `right` }}>
+            <div
+              style={{ float: `right`, maxWidth: `40%`, textAlign: `right` }}
+            >
               下一篇
               <br />
               <Link to={next.fields.slug} rel="next">
