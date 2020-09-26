@@ -72,7 +72,7 @@ custom_domains = www.yourdomain.com
 
 ![TopNep](./2020-07-19.png)
 
-frp 能做的事有很多，你可以查看[这里](https://github.com/fatedier/frp/blob/master/README_zh.md)学习更多操作。
+frp 能做的事有很多，你可以查看[这里](https://gofrp.org/docs/examples/)学习更多操作。
 
 ## 让 frpc 在后台运行
 
