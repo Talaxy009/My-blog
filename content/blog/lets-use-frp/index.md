@@ -68,9 +68,9 @@ custom_domains = www.yourdomain.com
 
 当出现`login to server success`和`start proxy success`时，说明服务端与客户端已成功建立连接，这之后你就能通过访问`http://www.yourdomain.com:8080`访问到内网中路由器的 Web 管理页了。
 
-我把路由器 Web 管理页映射到了`http://snow-mountain.life:8080`
+我把路由器 Web 管理页映射到了[http://router.snow-mountain.life:8080](http://router.snow-mountain.life:8080)
 
-![TopNep](./2020-07-19.png)
+![TopNep](./2020-10-07.png)
 
 frp 能做的事有很多，你可以查看[这里](https://gofrp.org/docs/examples/)学习更多操作。
 
