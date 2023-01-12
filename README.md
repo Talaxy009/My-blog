@@ -1,6 +1,6 @@
 # Taozc's Blog
 
-This is my blog, which is made with [Gatsby](https://www.gatsbyjs.org/).
+This is my blog, which is made with [Gatsby](https://www.gatsbyjs.org/). **This is an old project and will no longer be maintained, you can find the new one [here](https://github.com/Talaxy009/my-gatsby-blog).**
 
 ## Usage
 
